@@ -7,8 +7,8 @@ if [[ -n "$DB_USER" && -n "$DB_PASSWORD" ]]; then
 
     mysqldump -u "$DB_USER" -p"$DB_PASSWORD" --no-create-info "ShopDB" > "$DATA_BACKUP"
 
-    mysql -u "$DB_USER" -p"$DB_PASSWORD" "ShopDBReserve" < "$FULL_BACKUP
-"
+    mysql -u "$DB_USER" -p"$DB_PASSWORD" "ShopDBReserve" < "$FULL_BACKUP"
+
     mysql -u "$DB_USER" -p"$DB_PASSWORD" "ShopDBDevelopment" < "$DATA_BACKUP"
 else
     echo "Provide DB_PASSWORD and DB_USER"
